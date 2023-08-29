@@ -34,13 +34,6 @@ resource "aviatrix_edge_equinix" "test" {
     ip_address = "10.230.3.32/24"
   }
 
-  interfaces {
-    name        = "eth2"
-    type        = "MANAGEMENT"
-    enable_dhcp = false
-    ip_address  = "172.16.15.162/20"
-    gateway_ip  = "172.16.0.1"
-  }
 }
 ```
 
@@ -53,7 +46,7 @@ The following arguments are supported:
 * `gw_name` - (Required) Edge Equinix name.
 * `site_id` - (Required) Site ID.
 * `ztp_file_download_path` - (Required) The folder path where the ZTP file will be downloaded.
-* `interfaces` - (Required) WAN/LAN/MANAGEMENT interfaces.
+* `interfaces` - (Required) WAN/LAN interfaces.
   * `name` - (Required) Interface name.
   * `type` - (Required) Type. Valid values: WAN, LAN, or MANAGEMENT.
   * `bandwidth` - (Optional) The rate of data can be moved through the interface, requires an integer value. Unit is in Mb/s.
